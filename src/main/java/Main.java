@@ -1,15 +1,8 @@
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-
 import lombok.SneakyThrows;
-import lombok.extern.flogger.Flogger;
 import lombok.extern.java.Log;
-import lombok.extern.log4j.Log4j;
-import lombok.extern.slf4j.Slf4j;
+
+import java.util.Scanner;
+import java.util.logging.Level;
 
 @Log()
 public class Main {
@@ -19,7 +12,7 @@ public class Main {
         PeerImpl peer = PeerImpl.getNewInstance(logLevel);
         Scanner sc = new Scanner(System.in);
 
-        while (true) {
+        do {
             System.out.println("Recurso 1 ou 2: ");
             var opc = Integer.valueOf(sc.next());
             sc.nextLine();
@@ -32,7 +25,7 @@ public class Main {
                     break;
             }
 
-        }
+        } while (true);
     }
 
 
